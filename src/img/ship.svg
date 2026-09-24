@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" width="520" height="440" role="img" aria-labelledby="ship-t">
+  <title id="ship-t">A watercolour ship running down on a rocky island</title>
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E9A257" stop-opacity=".55"/>
+      <stop offset="60%" stop-color="#C05A38" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="#7B2430" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="seaG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8D2C33"/>
+      <stop offset="100%" stop-color="#3C1019"/>
+    </linearGradient>
+    <linearGradient id="rockG" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#5B1D26"/>
+      <stop offset="100%" stop-color="#250C14"/>
+    </linearGradient>
+
+    <filter id="swc" x="-22%" y="-22%" width="144%" height="144%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="21" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1"/>
+    </filter>
+    <filter id="swcSoft" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="6" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="6"/>
+    </filter>
+    <filter id="swcEdge" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="13" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <radialGradient id="sfadeG" cx="52%" cy="48%" r="64%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sfade"><rect width="520" height="440" fill="url(#sfadeG)"/></mask>
+  </defs>
+
+  <g mask="url(#sfade)">
+
+    <g filter="url(#swcSoft)">
+      <rect x="0" y="0" width="520" height="250" fill="url(#sky)"/>
+      <ellipse cx="150" cy="120" rx="170" ry="90" fill="#B8532F" opacity=".22"/>
+      <ellipse cx="400" cy="90" rx="150" ry="70" fill="#E0954C" opacity=".20"/>
+    </g>
+
+    <!-- the island: already close, and to windward -->
+    <g filter="url(#swc)">
+      <path d="M296 250 L330 186 L352 208 L378 138 L404 196 L428 168 L452 214 L488 246 Z" fill="url(#rockG)"/>
+      <path d="M378 138 L392 172 L366 200 L352 208 Z" fill="#7A2A2C" opacity=".55"/>
+      <path d="M452 214 L468 232 L432 236 Z" fill="#6B2429" opacity=".5"/>
+    </g>
+
+    <!-- sea -->
+    <g filter="url(#swc)">
+      <path d="M0 252 C90 242 150 262 236 256 C318 250 392 262 520 248 L520 440 L0 440 Z" fill="url(#seaG)"/>
+    </g>
+    <g filter="url(#swcSoft)" opacity=".55">
+      <ellipse cx="120" cy="330" rx="180" ry="42" fill="#A5333A" opacity=".45"/>
+      <ellipse cx="400" cy="380" rx="200" ry="50" fill="#5A1722" opacity=".5"/>
+    </g>
+
+    <!-- the ship, heeled over and running straight at it -->
+    <g filter="url(#swc)">
+      <path d="M132 292 C150 288 212 286 244 292 C236 310 214 320 186 320 C162 320 140 308 132 292 Z" fill="#33101A"/>
+      <path d="M190 292 L206 196" stroke="#33101A" stroke-width="5" stroke-linecap="round"/>
+      <path d="M206 198 C232 220 244 250 244 280 C222 276 200 272 192 264 Z" fill="#E8DAD2" opacity=".92"/>
+      <path d="M204 204 C186 224 176 248 176 276 C190 272 200 266 206 256 Z" fill="#D9C6BE" opacity=".85"/>
+    </g>
+
+    <!-- spray on the rocks -->
+    <g filter="url(#swcEdge)" opacity=".6">
+      <ellipse cx="308" cy="254" rx="34" ry="16" fill="#EADCD4" opacity=".55"/>
+      <ellipse cx="470" cy="250" rx="28" ry="13" fill="#EADCD4" opacity=".4"/>
+      <ellipse cx="386" cy="248" rx="22" ry="10" fill="#EADCD4" opacity=".35"/>
+    </g>
+
+    <!-- brush lines: swell running in -->
+    <g filter="url(#swcEdge)" fill="none" stroke="#24090F" stroke-linecap="round" opacity=".42">
+      <path d="M24 300 C86 292 148 300 206 296" stroke-width="2.5"/>
+      <path d="M60 348 C140 338 232 350 320 342" stroke-width="3"/>
+      <path d="M140 398 C230 388 330 400 440 390" stroke-width="2.5" opacity=".8"/>
+      <path d="M296 250 L488 246" stroke-width="2" opacity=".5"/>
+    </g>
+
+  </g>
+</svg>

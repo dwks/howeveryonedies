@@ -154,6 +154,8 @@ def main():
     DIST.mkdir(exist_ok=True)
     shutil.copyfile(SRC / "styles.css", DIST / "styles.css")
     print("built dist/styles.css")
+    shutil.copytree(SRC / "img", DIST / "img", dirs_exist_ok=True)
+    print("built dist/img/")
     partials = {name: (SRC / (name + ".html")).read_text().strip() for name, _, _ in VIEWS}
     build_site(partials)
     build_artifact(partials)

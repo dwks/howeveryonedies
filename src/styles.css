@@ -1,19 +1,20 @@
 /* How Everyone Dies — register of terminal outcomes */
 
 :root {
-  /* light: ledger paper */
-  --ground: #e4e7e1;
-  --paper: #f2f4ef;
-  --ink: #171c18;
-  --ink-2: #4a524b;
-  --ink-3: #6f786f;
-  --rule: #c4cabf;
-  --rule-soft: #d6dad0;
-  --accent: #1d5b60;
-  --accent-tint: #d5e1e0;
-  --flag: #8a5a12;
-  --flag-tint: #ecdfc4;
-  --shadow: 0 1px 0 rgba(23, 28, 24, .06);
+  /* light: a pale oxblood wash, as on a bookplate */
+  --ground: #e6d4cf;
+  --ground-tint: #efdfd9;
+  --paper: #f1e3df;
+  --ink: #2a1015;
+  --ink-2: #5d3739;
+  --ink-3: #7c4c4d;
+  --rule: #c9aaa5;
+  --rule-soft: #dcc2bd;
+  --accent: #8e1f2f;
+  --accent-tint: #ddc2bd;
+  --flag: #765313;
+  --flag-tint: #e8d7b8;
+  --shadow: 0 1px 0 rgba(42, 16, 21, .07);
 
   --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Newsreader", Georgia, "Times New Roman", serif;
@@ -22,34 +23,36 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #121613;
-    --paper: #1a201c;
-    --ink: #dfe4dc;
-    --ink-2: #9ba498;
-    --ink-3: #7a8378;
-    --rule: #2d352f;
-    --rule-soft: #232a25;
-    --accent: #74b3b4;
-    --accent-tint: #1e2f30;
-    --flag: #d0a24a;
-    --flag-tint: #32291a;
-    --shadow: 0 1px 0 rgba(0, 0, 0, .3);
+    --ground: #1b0d10;
+    --ground-tint: #2a1116;
+    --paper: #27151a;
+    --ink: #f0e1dd;
+    --ink-2: #c3a29e;
+    --ink-3: #9e7a78;
+    --rule: #452429;
+    --rule-soft: #33191f;
+    --accent: #e0908a;
+    --accent-tint: #351a20;
+    --flag: #d3a455;
+    --flag-tint: #33291a;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .35);
   }
 }
 
 :root[data-theme="dark"] {
-  --ground: #121613;
-  --paper: #1a201c;
-  --ink: #dfe4dc;
-  --ink-2: #9ba498;
-  --ink-3: #7a8378;
-  --rule: #2d352f;
-  --rule-soft: #232a25;
-  --accent: #74b3b4;
-  --accent-tint: #1e2f30;
-  --flag: #d0a24a;
-  --flag-tint: #32291a;
-  --shadow: 0 1px 0 rgba(0, 0, 0, .3);
+  --ground: #1b0d10;
+  --ground-tint: #2a1116;
+  --paper: #27151a;
+  --ink: #f0e1dd;
+  --ink-2: #c3a29e;
+  --ink-3: #9e7a78;
+  --rule: #452429;
+  --rule-soft: #33191f;
+  --accent: #e0908a;
+  --accent-tint: #351a20;
+  --flag: #d3a455;
+  --flag-tint: #33291a;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .35);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -59,6 +62,8 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--ground);
+  background-image: radial-gradient(115% 62% at 82% -8%, var(--ground-tint), transparent 62%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--f-body);
   font-size: 1.0625rem;
@@ -161,8 +166,8 @@ a:hover { color: var(--ink); }
 .masthead h1 {
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: clamp(2.75rem, 9vw, 5.5rem);
-  line-height: .94;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: .96;
   letter-spacing: -.035em;
   margin: 0;
   text-wrap: balance;
@@ -299,11 +304,51 @@ a:hover { color: var(--ink); }
   letter-spacing: -.03em;
 }
 
+/* ---------- illustration ---------- */
+
+.masthead { position: relative; }
+
+.masthead-art {
+  display: block;
+  width: 84%;
+  max-width: 320px;
+  margin: 0 0 1.5rem;
+}
+
+.part-art { display: none; }
+
+/* Wide enough for the art to clear the text column entirely: it is never
+   laid behind running text, in either direction. */
+@media (min-width: 1080px) {
+  .masthead-art {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    width: min(38%, 400px);
+    max-width: none;
+    margin: 0;
+    pointer-events: none;
+  }
+  .masthead h1, .masthead .intro { position: relative; }
+}
+
+@media (min-width: 900px) {
+  .part-head.with-art { position: relative; min-height: 15rem; padding-right: 280px; }
+  .part-art {
+    display: block;
+    position: absolute;
+    top: .25rem;
+    right: 0;
+    width: 250px;
+    pointer-events: none;
+  }
+}
+
 /* ---------- landing: intro ---------- */
 
 .intro {
   margin-top: clamp(1.5rem, 4vw, 2.25rem);
-  max-width: 62ch;
+  max-width: 58ch;
 }
 .intro p { margin: 0 0 1rem; }
 .intro p:last-child { margin-bottom: 0; }

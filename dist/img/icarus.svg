@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 620" width="560" height="620" role="img" aria-labelledby="icarus-t">
+  <title id="icarus-t">A watercolour bird carrying the Earth on its back, climbing into the sun</title>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F8D287" stop-opacity=".9"/>
+      <stop offset="42%" stop-color="#E8873F" stop-opacity=".42"/>
+      <stop offset="100%" stop-color="#B0332E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc" cx="40%" cy="34%" r="72%">
+      <stop offset="0%" stop-color="#FCEEC0"/>
+      <stop offset="52%" stop-color="#F4BC60"/>
+      <stop offset="100%" stop-color="#D9682F"/>
+    </radialGradient>
+    <linearGradient id="bodyG" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#7C2429"/>
+      <stop offset="100%" stop-color="#31101A"/>
+    </linearGradient>
+    <linearGradient id="wingA" x1="10%" y1="100%" x2="90%" y2="0%">
+      <stop offset="0%" stop-color="#3B121C"/>
+      <stop offset="100%" stop-color="#97332C"/>
+    </linearGradient>
+    <linearGradient id="wingB" x1="0%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#8A2B2A"/>
+      <stop offset="100%" stop-color="#2E0E18"/>
+    </linearGradient>
+    <radialGradient id="earthG" cx="34%" cy="30%" r="76%">
+      <stop offset="0%" stop-color="#6FB4BE"/>
+      <stop offset="58%" stop-color="#2F718A"/>
+      <stop offset="100%" stop-color="#173C52"/>
+    </radialGradient>
+
+    <filter id="wc" x="-22%" y="-22%" width="144%" height="144%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.017" numOctaves="4" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1.1"/>
+    </filter>
+    <filter id="wcSoft" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="7"/>
+    </filter>
+    <filter id="wcEdge" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="17" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <radialGradient id="fadeG" cx="54%" cy="38%" r="66%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".96"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="fade"><rect width="560" height="620" fill="url(#fadeG)"/></mask>
+  </defs>
+
+  <g mask="url(#fade)">
+
+    <!-- sky: loose washes laid down first, as in a wet ground -->
+    <g filter="url(#wcSoft)">
+      <ellipse cx="350" cy="230" rx="255" ry="215" fill="#A83B30" opacity=".34"/>
+      <ellipse cx="175" cy="480" rx="225" ry="155" fill="#6B1E2C" opacity=".30"/>
+      <ellipse cx="440" cy="440" rx="175" ry="135" fill="#C45C33" opacity=".22"/>
+      <ellipse cx="120" cy="215" rx="150" ry="120" fill="#7E2530" opacity=".20"/>
+    </g>
+
+    <!-- sun -->
+    <circle cx="392" cy="168" r="246" fill="url(#glow)"/>
+    <g filter="url(#wc)">
+      <circle cx="392" cy="168" r="97" fill="url(#disc)"/>
+      <circle cx="392" cy="168" r="97" fill="none" stroke="#D2632C" stroke-width="3.5" opacity=".45"/>
+      <circle cx="392" cy="168" r="66" fill="#FBE7AE" opacity=".45"/>
+    </g>
+
+    <!-- heat shimmer between bird and sun -->
+    <g filter="url(#wcSoft)" opacity=".5">
+      <ellipse cx="352" cy="252" rx="92" ry="26" fill="#EFA24E" opacity=".5"/>
+      <ellipse cx="316" cy="292" rx="66" ry="17" fill="#E8843F" opacity=".4"/>
+    </g>
+
+    <g filter="url(#wc)">
+      <!-- far wing, sweeping up toward the sun -->
+      <path d="M270 344 C238 292 206 228 200 160 C250 204 302 270 318 332 Z" fill="url(#wingA)" opacity=".92"/>
+      <!-- the Earth, riding on its back -->
+      <g transform="translate(-10 -14)">
+      <g transform="translate(206 338) scale(1.24) translate(-206 -338)">
+      <circle cx="206" cy="338" r="47" fill="url(#earthG)"/>
+      <path d="M180 312 C196 306 212 314 216 326 C204 338 184 336 176 326 Z" fill="#4E8A54" opacity=".9"/>
+      <path d="M216 356 C230 350 242 358 240 370 C228 380 212 374 208 364 Z" fill="#5C9459" opacity=".85"/>
+      <path d="M182 360 C190 356 198 360 198 368 C190 374 180 370 178 364 Z" fill="#437A4C" opacity=".8"/>
+      <circle cx="206" cy="338" r="47" fill="none" stroke="#10303F" stroke-width="2" opacity=".35"/>
+      </g>
+      </g>
+      <!-- body -->
+      <ellipse cx="244" cy="384" rx="106" ry="39" fill="url(#bodyG)" transform="rotate(-42 244 384)"/>
+      <!-- near wing, beating down -->
+      <path d="M252 404 C280 448 304 500 300 560 C258 520 224 468 218 422 Z" fill="url(#wingB)" opacity=".95"/>
+      <!-- tail -->
+      <path d="M170 448 C142 470 112 492 92 522 C130 518 166 500 192 476 Z" fill="#3A121C" opacity=".9"/>
+      <!-- head and beak -->
+      <circle cx="322" cy="306" r="27" fill="#5E1B23"/>
+      <path d="M344 296 L382 282 L348 316 Z" fill="#D98A34"/>
+      <circle cx="330" cy="299" r="4.5" fill="#F6E3B6"/>
+    </g>
+
+    <!-- loose brush lines: the cartoon hand over the wash -->
+    <g filter="url(#wcEdge)" fill="none" stroke="#2C0D16" stroke-linecap="round" opacity=".5">
+      <path d="M206 158 C214 226 244 292 272 342" stroke-width="3"/>
+      <path d="M300 558 C302 500 280 448 254 406" stroke-width="3"/>
+      <path d="M296 322 C266 366 224 410 178 444" stroke-width="2.5" opacity=".7"/>
+      <path d="M94 520 C124 500 158 480 188 460" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- feathers already coming loose -->
+    <g filter="url(#wcEdge)" fill="#7A2528" opacity=".55">
+      <path d="M128 372 C140 362 152 366 150 378 C144 390 128 390 124 382 Z"/>
+      <path d="M86 436 C96 428 107 432 105 442 C100 452 87 452 84 445 Z" opacity=".8"/>
+      <path d="M150 556 C160 546 172 550 169 561 C163 572 150 571 147 564 Z" opacity=".65"/>
+    </g>
+
+  </g>
+</svg>

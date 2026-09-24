@@ -31,7 +31,8 @@ The served site is `dist/`. Four pages, with a top navbar between them:
 | Path | Purpose |
 | --- | --- |
 | `src/*.html` | The page bodies. Edit these. |
-| `src/styles.css` | All styling, light and dark themes. |
+| `src/styles.css` | All styling. Maroon palette, light and dark themes. |
+| `src/img/*.svg` | Watercolour illustrations, drawn as SVG turbulence washes. |
 | `build.py` | Assembles `dist/`. |
 | `dist/` | Generated. Do not edit by hand. |
 | `ideas.txt`, `text.txt` | Working notes and copy. |

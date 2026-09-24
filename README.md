@@ -4,6 +4,8 @@ A draft site registering the *mechanisms* by which advanced AI could kill
 everyone — a companion to *If Anyone Builds It, Everyone Dies*, which argues
 the **if**. This asks the **how**.
 
+Published draft: <https://claude.ai/artifact/3ehNhVFAw8UoXfx2TtegL4>
+
 Twelve entries in three parts:
 
 - **M** — four independent mechanisms (gradual disempowerment, the impossible

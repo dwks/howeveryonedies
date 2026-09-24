@@ -1,0 +1,13 @@
+Advanced AI has the potential to be extremely dangerous, and by continuing to
+develop it we run the risk of catastrophic outcomes up to and including human
+extinction.
+
+A common response to learning about catastrophic AI risk is to ask, how could
+that actually happen? How could an AI inside a computer cause humans to die,
+let alone all of humanity? This site answers these questions with example
+scenarios.
+
+Note that these are examples to illustrate potential dangers. We couldn't know
+exactly how a superintelligence AI would kill everyone, the same way you
+couldn't predict in advance how you might lose to a chess grandmaster. However,
+you could be pretty sure that you would lose.

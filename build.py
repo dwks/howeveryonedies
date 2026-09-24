@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Build How Everyone Dies from the partials in src/.
+"""Build How Everyone Dies from the sources in src/ into dist/.
 
-Two outputs from one set of sources:
+Everything in dist/ is generated and everything served comes from there:
 
-  * the site      -- index.html / mechanisms.html / explanation.html /
-                     scenarios.html, four real pages that work without JS.
-  * the artifact  -- artifact/page.html, a single document holding all four
+  * the site      -- dist/index.html, mechanisms.html, explanation.html and
+                     scenarios.html, four real pages that work without JS,
+                     alongside a copy of the stylesheet.
+  * the artifact  -- dist/artifact.html, a single document holding all four
                      views behind a hash router, because a published Claude
-                     Artifact is one page.
+                     Artifact is one page. Not part of the served site.
 
 Partials link to each other with {{href <view>}} or {{href <view> <anchor>}};
 each output resolves those to whatever its own navigation needs.
@@ -15,9 +16,11 @@ each output resolves those to whatever its own navigation needs.
 
 import pathlib
 import re
+import shutil
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src"
+DIST = ROOT / "dist"
 
 VIEWS = [
     ("home", "How Everyone Dies", None),
@@ -94,9 +97,9 @@ def build_site(partials):
             ]
         )
         full = title if name == "home" else "%s · How Everyone Dies" % title
-        out = ROOT / page_link(name, None)
+        out = DIST / page_link(name, None)
         out.write_text(document(full, body))
-        print("built", out.name)
+        print("built dist/%s" % out.name)
 
 
 ROUTER = """<script>
@@ -143,13 +146,14 @@ def build_artifact(partials):
             ROUTER % repr(TITLES).replace("'", '"'),
         ]
     )
-    out = ROOT / "artifact"
-    out.mkdir(exist_ok=True)
-    (out / "page.html").write_text(body + "\n")
-    print("built artifact/page.html")
+    (DIST / "artifact.html").write_text(body + "\n")
+    print("built dist/artifact.html")
 
 
 def main():
+    DIST.mkdir(exist_ok=True)
+    shutil.copyfile(SRC / "styles.css", DIST / "styles.css")
+    print("built dist/styles.css")
     partials = {name: (SRC / (name + ".html")).read_text().strip() for name, _, _ in VIEWS}
     build_site(partials)
     build_artifact(partials)

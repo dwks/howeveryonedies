@@ -8,6 +8,6 @@ let alone all of humanity? This site answers these questions with example
 scenarios.
 
 Note that these are examples to illustrate potential dangers. We couldn't know
-exactly how a superintelligence AI would kill everyone, the same way you
+exactly how a superintelligent AI would kill everyone, the same way you
 couldn't predict in advance how you might lose to a chess grandmaster. However,
 you could be pretty sure that you would lose.

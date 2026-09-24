@@ -17,24 +17,24 @@ Twelve entries in three parts:
 
 ## Structure
 
-Four pages, with a top navbar between them:
+The served site is `dist/`. Four pages, with a top navbar between them:
 
 | Page | Holds |
 | --- | --- |
-| `index.html` | Landing: the four mechanisms as a grid, explanation and scenarios below. |
-| `mechanisms.html` | Part M |
-| `explanation.html` | Part E |
-| `scenarios.html` | Part S |
+| `dist/index.html` | Landing: the intro, the four mechanisms as a grid, explanation and scenarios below. |
+| `dist/mechanisms.html` | Part M |
+| `dist/explanation.html` | Part E |
+| `dist/scenarios.html` | Part S |
 
 ## Files
 
-| File | Purpose |
+| Path | Purpose |
 | --- | --- |
 | `src/*.html` | The page bodies. Edit these. |
-| `styles.css` | All styling, light and dark themes. |
-| `build.py` | Assembles the site and the artifact bundle. |
-| `*.html`, `artifact/` | Generated. Do not edit by hand. |
-| `ideas.txt` | Working outline. |
+| `src/styles.css` | All styling, light and dark themes. |
+| `build.py` | Assembles `dist/`. |
+| `dist/` | Generated. Do not edit by hand. |
+| `ideas.txt`, `text.txt` | Working notes and copy. |
 
 ```sh
 ./build.py
@@ -42,5 +42,6 @@ Four pages, with a top navbar between them:
 
 Partials cross-link with `{{href <view>}}` or `{{href <view> <anchor>}}`, which
 the build resolves per output. The site gets four real pages that work without
-JavaScript; a published Claude Artifact is a single page, so `artifact/page.html`
-bundles all four views behind a hash router from the same sources.
+JavaScript; `dist/artifact.html` bundles all four views behind a hash router for
+publishing as a Claude Artifact, which is only ever a single page. It is built
+from the same sources and is not part of the served site.

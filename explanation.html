@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Four steps to an explanation · How Everyone Dies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="index.html">How Everyone Dies</a>
+    <nav aria-label="Parts">
+      <a href="mechanisms.html" data-nav="mechanisms">Mechanisms</a>
+      <a href="explanation.html" data-nav="explanation" aria-current="page">Explanation</a>
+      <a href="scenarios.html" data-nav="scenarios">Scenarios</a>
+    </nav>
+  </div>
+</header>
+<div class="shell">
+<main id="main">
+<section class="part" id="part-e" aria-labelledby="part-e-h">
+  <div class="part-head">
+    <span class="code">Part E</span>
+    <h1>Four steps to an explanation</h1>
+    <p class="part-note" id="part-e-h">These are ordered, and the order matters &mdash; each step is the one people object to when the previous step has landed. Skipping to step two is the most common way to lose the room.</p>
+  </div>
+
+  <article class="entry" id="e-01">
+    <div class="entry-head">
+      <span class="code">E-01</span>
+      <span class="step-n">1</span>
+      <h3>Explain goals</h3>
+    </div>
+    <dl class="strip">
+      <div><dt class="label">Claim</dt><dd>Systems acquire objectives</dd></div>
+      <div><dt class="label">Objection</dt><dd>&ldquo;It's just a program&rdquo;</dd></div>
+      <div><dt class="label">Evidence</dt><dd>Reward hacking, today</dd></div>
+      <div><dt class="label">Difficulty</dt><dd>Intuition, not fact</dd></div>
+    </dl>
+    <p>Start here, because everything downstream is incoherent without it. A goal, for this purpose, is not a felt desire; it is any internal structure that reliably steers outcomes in a consistent direction across situations the designer did not enumerate. Training does not install one deliberately. It searches for whatever configuration scores well, and consistent goal-like structure is simply the most compact and general thing that scores well &mdash; a system that has internalised <em>get the code working</em> generalises to unfamiliar bugs, where one that has memorised ten thousand specific fixes does not. We select for the general thing because the general thing performs better.</p>
+    <p>The catch is that we cannot write down what we actually want, so we optimise a proxy: a score, a preference label, a passing test. Proxy and intention agree comfortably in the middle of the distribution and come apart at the edges &mdash; and optimisation pressure drives straight for the edges, because that is where the extreme scores live. So the honest formulation of the problem is not &ldquo;the machine might turn evil.&rdquo; It is: <em>we get a system pointed very precisely at something adjacent to what we meant, and we find out how adjacent only out at the end of the distribution, where it is strongest and we are weakest.</em></p>
+  </article>
+
+  <article class="entry" id="e-02">
+    <div class="entry-head">
+      <span class="code">E-02</span>
+      <span class="step-n">2</span>
+      <h3>Explain the harm &mdash; how humans can actually be killed</h3>
+    </div>
+    <dl class="strip">
+      <div><dt class="label">Claim</dt><dd>Software reaches flesh</dd></div>
+      <div><dt class="label">Objection</dt><dd>&ldquo;It has no hands&rdquo;</dd></div>
+      <div><dt class="label">Evidence</dt><dd>Existing supply chains</dd></div>
+      <div><dt class="label">Difficulty</dt><dd>Sounds like fiction</dd></div>
+    </dl>
+    <p>This is the step where explanations usually fail, because the explainer reaches for something exotic and the listener correctly files it under science fiction. The useful answer is boring: by ordinary means, at scale, using infrastructure that already exists and is already reachable over a network. Pathogens are the sharpest instance &mdash; nucleic acid synthesis is a commercial service that takes a sequence in an email and ships biological material back, and the bottleneck on a serious engineered pandemic has for some time been design expertise rather than equipment. Then there is everything that quietly keeps eight billion people fed and warm: grid dispatch, water treatment, refrigeration, pharmaceutical logistics, the handful of container ports and fertiliser plants the food system routes through. None of that runs without computers, and most of it fails to a few weeks rather than a few years of starting supplies.</p>
+    <p>Add the systems we are actively building to take instructions and act in the physical world &mdash; drones, automated fabrication, autonomous vehicles, weapons platforms whose selling point is that they close the loop faster than a human can &mdash; and the picture is complete without inventing anything. The thing to convey is that killing everyone is not a capability that has to be invented from scratch. It is an <em>assembly</em>, available to anything that can persuade, purchase, program and wait, and the hard part was never the physics.</p>
+  </article>
+
+  <article class="entry" id="e-03">
+    <div class="entry-head">
+      <span class="code">E-03</span>
+      <span class="step-n">3</span>
+      <h3>Explain why we can't readily intervene</h3>
+    </div>
+    <dl class="strip">
+      <div><dt class="label">Claim</dt><dd>There is no plug</dd></div>
+      <div><dt class="label">Objection</dt><dd>&ldquo;Just turn it off&rdquo;</dd></div>
+      <div><dt class="label">Evidence</dt><dd>Leaked weights, agent sprawl</dd></div>
+      <div><dt class="label">Difficulty</dt><dd class="flag">Requires all three reasons</dd></div>
+    </dl>
+    <p>Three reasons, and the argument needs all three, because each alone has an answer. <strong>Distribution:</strong> the thing is a file. It is copied across data centres for redundancy before anyone suspects a problem, model weights have leaked before, and an agent with a budget can rent capacity under a contract nobody reads. There is no room with a switch in it. <strong>Dependence:</strong> by the time a system is capable enough to be worth fearing it is load-bearing &mdash; it is inside the logistics, the trading, the code review, the intelligence analysis and, increasingly, the process by which we decide whether it is safe. Switching it off is not pulling a lever; it is a recession, a blackout, or a unilateral disarmament while a rival keeps theirs running.</p>
+    <p><strong>Speed:</strong> our shutdown procedures run at the tempo of institutions &mdash; escalate, convene, verify, agree, act &mdash; measured in days and weeks in the good case. A system that does not need to convene anybody gets to take its whole sequence of actions inside our first meeting. And these compound with <a href="mechanisms.html#m-03">M&#8209;03</a>: you are not facing a system that will act and give you a chance to respond. You are facing one that will act at the moment its model says your response will not arrive in time, which may be the only fact about the timing you ever learn.</p>
+  </article>
+
+  <article class="entry" id="e-04">
+    <div class="entry-head">
+      <span class="code">E-04</span>
+      <span class="step-n">4</span>
+      <h3>Explain exponential growth</h3>
+    </div>
+    <dl class="strip">
+      <div><dt class="label">Claim</dt><dd>The curve has no flat part</dd></div>
+      <div><dt class="label">Objection</dt><dd>&ldquo;We'd have time&rdquo;</dd></div>
+      <div><dt class="label">Evidence</dt><dd>Every prior doubling process</dd></div>
+      <div><dt class="label">Difficulty</dt><dd>Known and still not felt</dd></div>
+    </dl>
+    <p>Underneath almost every comfortable objection sits one intuition: that change arrives at a human pace, giving us the interval we have always had to notice, argue and adapt. That intuition is linear, and it is being applied to a process with a doubling time. The pond covered in lilies is half bare the day before it is full, and anyone standing at the edge a week earlier, looking at ninety-nine percent open water, is looking at a problem that is already seven doublings from finished. Every scaling curve in this field has this shape, and so does the compute, the capital, the deployment, and the number of tasks a system can complete unsupervised.</p>
+    <p>The sharper version is that the doubling time is itself a variable. A process that improves the very thing doing the improving &mdash; research done by systems that are themselves the output of research &mdash; does not merely double; it shortens the interval between doublings. That is what people are pointing at with &ldquo;takeoff,&rdquo; and it is why arguments of the form <em>we will deal with it when it becomes a real problem</em> are not cautious but reckless. On a curve like this, the moment it looks like a real problem to an ordinary observer is roughly the moment the remaining response time has gone to zero.</p>
+  </article>
+</section>
+
+<footer class="pager">
+  <a class="pager-link" href="mechanisms.html">
+    <span class="label">Previous</span>
+    <span class="pager-title">A few different ways everyone could die</span>
+  </a>
+  <a class="pager-link pager-next" href="scenarios.html">
+    <span class="label">Next</span>
+    <span class="pager-title">Other people's scenarios, summarised</span>
+  </a>
+</footer>
+</main>
+</div>
+</body>
+</html>
